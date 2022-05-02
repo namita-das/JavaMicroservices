@@ -50,6 +50,12 @@ public class EmployeeController {
 			return allDocs;
 	}
 	
+	@GetMapping("/test")
+	public @ResponseBody String test() throws IOException {
+			
+			return "Hello user";
+	}
+	
 	@GetMapping("/employees/{id}")
 	public ResponseEntity<?> getById(@PathVariable String id) throws IOException {
 			db = client.database("employee", false);
