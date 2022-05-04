@@ -52,7 +52,8 @@ public class EmployeeController {
 	
 	@GetMapping("/test")
 	public @ResponseBody String test() throws IOException {
-			
+	
+	System.out.println("user tried test");		
 			return "Hello user";
 	}
 	
@@ -60,6 +61,7 @@ public class EmployeeController {
 	public ResponseEntity<?> getById(@PathVariable String id) throws IOException {
 			db = client.database("employee", false);
 			Employee employee = db.find(Employee.class, id);
+			System.out.println(employee.toString());	
 			return ResponseEntity.ok(employee);
 	}
 	
